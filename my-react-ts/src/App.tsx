@@ -8,12 +8,12 @@ function App() {
   const [offsetX, setOffsetX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
 
-  const handlePointerDown = (e) => {
+  const handlePointerDown = (e:any) => {
     setStartX(e.clientX);
     setIsDragging(true);
   };
 
-  const handlePointerMove = (e) => {
+  const handlePointerMove = (e:any) => {
     if (!isDragging || startX === null) return;
 
     let delta = e.clientX - startX;
