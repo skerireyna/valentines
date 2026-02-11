@@ -48,29 +48,6 @@ function App() {
     setIsDragging(false);
   };
 
-  const handleTouchStart = (e) => {
-    setTouchStart(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = (e) => {
-    if (touchStart === null) return;
-
-    const touchEnd = e.changedTouches[0].clientX;
-    const distance = touchStart - touchEnd;
-    const swipeThreshold = 50; // px
-
-    if (distance > swipeThreshold && currentCard < cards.length - 1) {
-      // swipe left → next card
-      setCurrentCard((i) => i + 1);
-    }
-
-    if (distance < -swipeThreshold && currentCard > 0) {
-      // swipe right → previous card
-      setCurrentCard((i) => i - 1);
-    }
-
-    setTouchStart(null);
-  };
 
   const cards = [
     {
