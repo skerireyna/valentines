@@ -1,4 +1,4 @@
-import { useState, type SetStateAction } from "react";
+import { useState } from "react";
 import "./index.css";
 
 function App() {
@@ -8,12 +8,12 @@ function App() {
   const [offsetX, setOffsetX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
 
-  const handlePointerDown = (e: { clientX: SetStateAction<null>; }) => {
+  const handlePointerDown = (e) => {
     setStartX(e.clientX);
     setIsDragging(true);
   };
 
-  const handlePointerMove = (e: { clientX: number; }) => {
+  const handlePointerMove = (e) => {
     if (!isDragging || startX === null) return;
 
     let delta = e.clientX - startX;
